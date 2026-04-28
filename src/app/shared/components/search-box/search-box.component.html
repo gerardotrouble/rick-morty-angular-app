@@ -4,7 +4,8 @@
 -->
 <div class="search-box" [class.search-box--active]="searchValue">
   <!-- La lupa solo aparece si el input está vacío -->
-  <img *ngIf="!searchValue" class="search-box__icon" src="/icons/search.svg" alt="" />
+  <!-- <img *ngIf="!searchValue" class="search-box__icon" src="/icons/search.svg" alt="" /> -->
+  <img *ngIf="!searchValue" class="search-box__icon" src="icons/search.svg" alt="" />
 
   <input class="search-box__input" type="text" placeholder="Buscar..." [value]="searchValue"
     (input)="onInput($event)" />

@@ -1,4 +1,3 @@
-```md
 ![Angular](https://img.shields.io/badge/Angular-19-red)
 ![Status](https://img.shields.io/badge/status-complete-success)
 ![Tests](https://img.shields.io/badge/tests-passing-green)
@@ -34,13 +33,13 @@ Aplicación desarrollada en **Angular 19** que consume la API de Rick and Morty 
 
 La aplicación sigue una estructura modular basada en buenas prácticas:
 
-
+```txt
 src/app
 │
 ├── core → Servicios, modelos y estado global
 ├── shared → Componentes reutilizables
 ├── features → Páginas principales (characters, favorites)
-
+```
 
 ### 🧩 Componentes reutilizables
 
@@ -74,22 +73,33 @@ Los favoritos se almacenan en:
 
 ```txt
 localStorage
+```
 
 Esto permite mantener el estado incluso después de recargar la página.
 
-⚙️ Tecnologías utilizadas
-Angular 19 (Standalone Components)
-TypeScript
-RxJS
-SCSS
-HTML5
-🌐 API
+---
+
+## ⚙️ Tecnologías utilizadas
+
+- Angular 19 (Standalone Components)
+- TypeScript
+- RxJS
+- SCSS
+- HTML5
+
+---
+
+## 🌐 API
 
 Se utiliza la API pública:
 
 👉 https://rickandmortyapi.com/
 
-🛠️ Instalación y ejecución
+---
+
+## 🛠️ Instalación y ejecución
+
+```bash
 # Clonar repositorio
 git clone https://github.com/tu-usuario/rick-morty-angular-app.git
 
@@ -101,19 +111,27 @@ npm install
 
 # Ejecutar aplicación
 npx ng serve -o
-🧪 Pruebas unitarias
+```
+
+---
+
+## 🧪 Pruebas unitarias
 
 Se implementaron pruebas unitarias básicas para:
 
-FavoritesService (estado global)
-CharacterCardComponent
-CharacterListComponent
+- `FavoritesService` (estado global)
+- `CharacterCardComponent`
+- `CharacterListComponent`
 
 Ejecución:
 
+```bash
 npx ng test
+```
 
-👨‍💻 Autor
+---
 
-Gerardo Santillan
+## 👨‍💻 Autor
+
+**Gerardo Santillan**  
 Frontend Developer (Angular)

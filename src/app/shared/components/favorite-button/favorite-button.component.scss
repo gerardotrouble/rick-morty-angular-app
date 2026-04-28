@@ -1,0 +1,43 @@
+.favorite-button {
+  width: 154px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px 4px 10px;
+  border: none;
+  border-radius: 8px;
+  background: #f7f7f8;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.favorite-button__text {
+  color: #181a1b;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.favorite-button__icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #4339f2;
+}
+
+.favorite-button__icon img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* En móvil ocupa todo el ancho */
+@media (max-width: 480px) {
+  .favorite-button {
+    width: 100%;
+  }
+}

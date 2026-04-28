@@ -1,0 +1,35 @@
+<nav class="pagination" aria-label="Paginación">
+
+  <button
+    class="pagination__arrow"
+    type="button"
+    [disabled]="disabled || isFirstPage"
+    (click)="previousPage()"
+    aria-label="Página anterior"
+  >
+    <img src="/icons/arrow-left.svg" alt="" />
+  </button>
+
+  <button
+    *ngFor="let page of visiblePages"
+    class="pagination__item"
+    type="button"
+    [class.pagination__item--active]="page === currentPage"
+    [class.pagination__item--dots]="page === '...'"
+    [disabled]="disabled || page === '...'"
+    (click)="selectPage(page)"
+  >
+    {{ page }}
+  </button>
+
+  <button
+    class="pagination__arrow"
+    type="button"
+    [disabled]="disabled || isLastPage"
+    (click)="nextPage()"
+    aria-label="Página siguiente"
+  >
+    <img src="/icons/arrow-right.svg" alt="" />
+  </button>
+
+</nav>

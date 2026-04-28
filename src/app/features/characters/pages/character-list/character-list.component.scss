@@ -1,0 +1,111 @@
+.characters-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 24px 56px;
+}
+
+.characters-page__inner {
+  width: min(100%, 1161px);
+  margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+.characters-page__header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.characters-page__header h1 {
+  margin: 0 0 16px;
+  font-size: 32px;
+  line-height: 37px;
+  font-weight: 700;
+}
+
+.characters-page__header p {
+  margin: 0;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+/* ================= TOOLBAR ================= */
+.characters-page__toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0 16px;
+}
+
+/* ================= CONTENT ================= */
+.characters-page__content {
+  width: 100%;
+  padding: 24px;
+  background: #f7f7f8;
+  border-radius: 8px;
+}
+
+/*
+  Importante:
+  - NO centramos las cards.
+  - Usamos flex-wrap como Figma.
+  - Si hay 1 o 2 resultados, se quedan a la izquierda.
+  - El contenedor gris crece o baja según cantidad de cards.
+*/
+.characters-page__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px;
+}
+
+.characters-page__loading {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.characters-page__empty {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #838a91;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 768px) {
+  .characters-page__content {
+    padding: 16px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .characters-page {
+    padding: 28px 12px 40px;
+  }
+
+  .characters-page__header h1 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .characters-page__header p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .characters-page__toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .characters-page__content {
+    padding: 14px;
+  }
+}

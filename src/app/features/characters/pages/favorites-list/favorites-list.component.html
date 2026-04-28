@@ -1,0 +1,65 @@
+<main class="favorites-page">
+  <div class="favorites-page__inner">
+
+    <!-- Título principal -->
+    <header class="favorites-page__header">
+      <h1>Mis favoritos</h1>
+    </header>
+
+    <!-- Botón volver -->
+    <button
+      class="favorites-page__back"
+      type="button"
+      (click)="goBack()">
+
+      <span class="favorites-page__back-icon">
+        <img src="/icons/back.svg" alt="" />
+      </span>
+
+      <span>Volver</span>
+    </button>
+
+    <!-- Contenedor gris de favoritos -->
+    <section class="favorites-page__content">
+
+      <!-- Cards favoritas -->
+      <div
+        *ngIf="paginatedFavorites.length > 0"
+        class="favorites-page__grid">
+
+        <app-character-card
+          *ngFor="let character of paginatedFavorites"
+          [character]="character"
+          (cardClick)="openModal(character)">
+        </app-character-card>
+
+      </div>
+
+      <!-- Estado vacío -->
+      <div
+        *ngIf="paginatedFavorites.length === 0"
+        class="favorites-page__empty">
+
+        Aún no tienes personajes favoritos.
+
+      </div>
+
+    </section>
+
+    <!-- Paginación -->
+    <app-pagination
+      *ngIf="favorites.length > itemsPerPage"
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      (pageChange)="onPageChange($event)">
+    </app-pagination>
+
+  </div>
+</main>
+
+<!-- Modal -->
+<app-character-modal
+  *ngIf="selectedCharacter"
+  [character]="selectedCharacter"
+  (closeModal)="closeModal()">
+</app-character-modal>

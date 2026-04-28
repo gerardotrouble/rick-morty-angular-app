@@ -1,0 +1,123 @@
+.favorites-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 72px 24px 56px;
+}
+
+.favorites-page__inner {
+  width: min(100%, 1161px);
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.favorites-page__header {
+  text-align: center;
+  margin-bottom: 54px;
+}
+
+.favorites-page__header h1 {
+  margin: 0;
+  color: #181a1b;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  line-height: 37px;
+  font-weight: 700;
+}
+
+/* ===== BOTÓN VOLVER ===== */
+.favorites-page__back {
+  width: 154px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 4px 10px 4px 4px;
+  margin-bottom: 24px;
+  border: none;
+  border-radius: 8px;
+  background: #f7f7f8;
+  color: #181a1b;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.favorites-page__back-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #2d68a2;
+}
+
+.favorites-page__back-icon img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* ===== CONTENEDOR ===== */
+.favorites-page__content {
+  width: 100%;
+  padding: 24px;
+  background: #f7f7f8;
+  border-radius: 8px;
+}
+
+/* Cards alineadas como Figma */
+.favorites-page__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px;
+}
+
+/* Estado vacío */
+.favorites-page__empty {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #838a91;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .favorites-page {
+    padding: 48px 16px 40px;
+  }
+
+  .favorites-page__header {
+    margin-bottom: 36px;
+  }
+
+  .favorites-page__content {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .favorites-page {
+    padding: 32px 12px 40px;
+  }
+
+  .favorites-page__header h1 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .favorites-page__back {
+    width: 100%;
+  }
+
+  .favorites-page__content {
+    padding: 14px;
+  }
+}

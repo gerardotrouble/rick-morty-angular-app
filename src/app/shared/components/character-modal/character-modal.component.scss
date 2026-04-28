@@ -1,0 +1,360 @@
+.character-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.character-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.character-modal__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 24px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 40px rgba(0, 0, 0, 0.05);
+  font-family: Arial, Helvetica, sans-serif;
+  animation: modalFade 0.2s ease;
+}
+
+/* ===== BOTÓN CERRAR ===== */
+.character-modal__actions {
+  width: 100%;
+  height: 22px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.character-modal__close {
+  width: 79px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 8px;
+  background: #ffe1e1;
+  color: #c73a3a;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.character-modal__close span {
+  font-size: 10px;
+  line-height: 11px;
+  font-weight: 700;
+}
+
+.character-modal__close img {
+  width: 14px;
+  height: 14px;
+}
+
+/* ===== IMAGEN ===== */
+.character-modal__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ===== INFO ===== */
+.character-modal__info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.character-modal__name {
+  margin: 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #181a1b;
+}
+
+/* ===== PILLS ===== */
+.character-modal__pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.character-modal__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.character-modal__pill strong {
+  font-weight: 700;
+}
+
+/* Ajuste para textos largos */
+.character-modal__pill span {
+  min-width: 0;
+}
+
+/* ===== COLORES ===== */
+.character-modal__pill--status {
+  background: #ccefff;
+}
+
+.character-modal__pill--gender {
+  background: #ccd5ff;
+}
+
+.character-modal__pill--species {
+  background: #ccffda;
+}
+
+.character-modal__pill--origin {
+  background: #f7f6ce;
+  width: 100%;
+  max-width: 220px;
+}
+
+.character-modal__pill--location {
+  background: #fae9d2;
+  width: 100%;
+  max-width: 220px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-height: 600px) {
+  .character-modal__card {
+    width: 240px;
+  }
+
+  .character-modal__image {
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 360px) {
+  .character-modal__card {
+    width: calc(100vw - 24px);
+  }
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Prueba de codigo sin adaptar */
+/*
+.character-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.character-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.character-modal__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  height: 408px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 40px rgba(0, 0, 0, 0.05);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.character-modal__actions {
+  width: 240px;
+  height: 22px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.character-modal__close {
+  width: 79px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 8px;
+  background: #ffe1e1;
+  color: #c73a3a;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.character-modal__close span {
+  font-size: 10px;
+  line-height: 11px;
+  font-weight: 700;
+}
+
+.character-modal__close img {
+  width: 14px;
+  height: 14px;
+}
+
+.character-modal__image {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.character-modal__info {
+  width: 240px;
+  height: 106px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.character-modal__name {
+  width: 240px;
+  height: 16px;
+  margin: 0;
+  color: #181a1b;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.character-modal__pills {
+  width: 240px;
+  height: 82px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.character-modal__pill {
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  color: #000000;
+  font-size: 12px;
+  line-height: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.character-modal__pill strong {
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.character-modal__pill span {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.character-modal__pill--status {
+  width: 89px;
+  background: #ccefff;
+}
+
+.character-modal__pill--gender {
+  width: 92px;
+  background: #ccd5ff;
+}
+
+.character-modal__pill--species {
+  width: 108px;
+  background: #ccffda;
+}
+
+.character-modal__pill--origin {
+  width: 113px;
+  background: #f7f6ce;
+}
+
+.character-modal__pill--location {
+  width: 165px;
+  background: #fae9d2;
+}
+
+@media (max-width: 320px), (max-height: 430px) {
+  .character-modal__card {
+    width: calc(100vw - 24px);
+    height: auto;
+  }
+
+  .character-modal__actions,
+  .character-modal__image,
+  .character-modal__info,
+  .character-modal__name,
+  .character-modal__pills {
+    width: 100%;
+  }
+
+  .character-modal__image {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+} */

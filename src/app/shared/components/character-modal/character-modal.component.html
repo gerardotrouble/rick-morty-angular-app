@@ -1,0 +1,67 @@
+<div class="character-modal" *ngIf="character">
+
+  <!-- Overlay -->
+  <div class="character-modal__overlay" (click)="onClose()">
+  </div>
+
+  <!-- Card -->
+  <section class="character-modal__card">
+
+    <!-- Botón cerrar -->
+    <div class="character-modal__actions">
+      <button class="character-modal__close" type="button" (click)="onClose()">
+
+        <span>CERRAR</span>
+
+        <img src="/icons/close.svg" alt="" />
+      </button>
+    </div>
+
+    <!-- Imagen -->
+    <img class="character-modal__image" [src]="character.image" [alt]="character.name" />
+
+    <!-- Info -->
+    <div class="character-modal__info">
+
+      <h2 class="character-modal__name">
+        {{ character.name }}
+      </h2>
+
+      <div class="character-modal__pills">
+
+        <!-- Estado -->
+        <span class="character-modal__pill character-modal__pill--status">
+          <strong>Estado:</strong>
+          <span>{{ character.status }}</span>
+        </span>
+
+        <!-- Género -->
+        <span class="character-modal__pill character-modal__pill--gender">
+          <strong>Género:</strong>
+          <span>{{ character.gender }}</span>
+        </span>
+
+        <!-- Especie -->
+        <span class="character-modal__pill character-modal__pill--species">
+          <strong>Especie:</strong>
+          <span>{{ character.species }}</span>
+        </span>
+
+        <!-- Origen -->
+        <span class="character-modal__pill character-modal__pill--origin">
+          <strong>Origen:</strong>
+          <span>{{ character.origin.name }}</span>
+        </span>
+
+        <!-- Ubicación -->
+        <span class="character-modal__pill character-modal__pill--location">
+          <strong>Ubicación:</strong>
+          <span>{{ character.location.name }}</span>
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+</div>

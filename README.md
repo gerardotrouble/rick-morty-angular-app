@@ -1,59 +1,119 @@
-# RickMortySngular
+```md
+![Angular](https://img.shields.io/badge/Angular-19-red)
+![Status](https://img.shields.io/badge/status-complete-success)
+![Tests](https://img.shields.io/badge/tests-passing-green)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.24.
+# 🧪 Rick & Morty Characters App
 
-## Development server
+Aplicación desarrollada en **Angular 19** que consume la API de Rick and Morty para mostrar personajes, gestionar favoritos y visualizar detalles en un modal, siguiendo un diseño basado en Figma.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🚀 Características
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 📌 Lista de personajes
+- Consumo de API REST
+- Renderizado inicial de personajes
+- Paginación dinámica
+- Búsqueda en tiempo real (debounce)
 
-## Code scaffolding
+### 🔍 Modal de detalle
+- Información completa del personaje
+- UI responsiva
+- Control de overflow y diseño fiel a Figma
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### ⭐ Favoritos
+- Agregar y eliminar personajes
+- Vista independiente de favoritos
+- Persistencia con `localStorage`
+- Estado global compartido
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🧱 Arquitectura
 
-```bash
-ng generate --help
-```
+La aplicación sigue una estructura modular basada en buenas prácticas:
 
-## Building
 
-To build the project run:
+src/app
+│
+├── core → Servicios, modelos y estado global
+├── shared → Componentes reutilizables
+├── features → Páginas principales (characters, favorites)
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### 🧩 Componentes reutilizables
 
-## Running unit tests
+- `character-card`
+- `character-modal`
+- `search-box`
+- `pagination`
+- `character-skeleton`
+- `favorite-button`
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## 🧠 Manejo de estado
 
-## Running end-to-end tests
+Se implementó un estado global utilizando:
 
-For end-to-end (e2e) testing, run:
+- `BehaviorSubject` (RxJS)
+- Servicio `FavoritesService`
 
-```bash
-ng e2e
-```
+Permite:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- Sincronización entre componentes
+- Actualización reactiva
+- Persistencia de datos
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 💾 Persistencia
+
+Los favoritos se almacenan en:
+
+```txt
+localStorage
+
+Esto permite mantener el estado incluso después de recargar la página.
+
+⚙️ Tecnologías utilizadas
+Angular 19 (Standalone Components)
+TypeScript
+RxJS
+SCSS
+HTML5
+🌐 API
+
+Se utiliza la API pública:
+
+👉 https://rickandmortyapi.com/
+
+🛠️ Instalación y ejecución
+# Clonar repositorio
+git clone https://github.com/tu-usuario/rick-morty-angular-app.git
+
+# Entrar al proyecto
+cd rick-morty-angular-app
+
+# Instalar dependencias
+npm install
+
+# Ejecutar aplicación
+npx ng serve -o
+🧪 Pruebas unitarias
+
+Se implementaron pruebas unitarias básicas para:
+
+FavoritesService (estado global)
+CharacterCardComponent
+CharacterListComponent
+
+Ejecución:
+
+npx ng test
+
+👨‍💻 Autor
+
+Gerardo Santillan
+Frontend Developer (Angular)

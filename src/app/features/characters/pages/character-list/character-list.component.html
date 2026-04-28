@@ -1,0 +1,64 @@
+<main class="characters-page">
+  <div class="characters-page__inner">
+
+    <header class="characters-page__header">
+      <h1>Wubba lubba dub dub!</h1>
+      <p>Base de datos de personajes de Rick y Morty</p>
+    </header>
+
+    <section class="characters-page__toolbar">
+      <app-search-box
+        (searchChange)="onSearch($event)">
+      </app-search-box>
+
+      <app-favorite-button
+        (favoriteClick)="goToFavorites()">
+      </app-favorite-button>
+    </section>
+
+    <section class="characters-page__content">
+
+      <div *ngIf="loading" class="characters-page__grid">
+        <app-character-skeleton
+          *ngFor="let item of skeletonItems">
+        </app-character-skeleton>
+      </div>
+
+      <div
+        *ngIf="!loading && characters.length > 0"
+        class="characters-page__grid">
+
+        <app-character-card
+          *ngFor="let character of characters"
+          [character]="character"
+          (cardClick)="openModal(character)">
+        </app-character-card>
+
+      </div>
+
+      <div
+        *ngIf="!loading && characters.length === 0"
+        class="characters-page__empty">
+
+        {{ errorMessage || 'No hay personajes para mostrar.' }}
+
+      </div>
+
+    </section>
+
+    <app-pagination
+      *ngIf="!loading && characters.length > 0 && totalPages > 1"
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      [disabled]="loading"
+      (pageChange)="onPageChange($event)">
+    </app-pagination>
+
+  </div>
+</main>
+
+<app-character-modal
+  *ngIf="selectedCharacter"
+  [character]="selectedCharacter"
+  (closeModal)="closeModal()">
+</app-character-modal>
